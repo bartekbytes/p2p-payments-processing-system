@@ -1,0 +1,9 @@
+[project]
+name = "common-logger"
+version = "1.0.0"
+description = "Shared Logger / Logging mechanism"
+requires-python = ">=3.12"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

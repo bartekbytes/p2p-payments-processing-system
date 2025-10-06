@@ -1,0 +1,9 @@
+[project]
+name = "common-config"
+version = "1.0.0"
+description = "Shared Configuration / Environment Variables mechanism"
+requires-python = ">=3.12"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
