@@ -1,0 +1,169 @@
+services:
+  pps_postgresql:
+    image: postgres:17.6
+    container_name: pps_postgresql
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pps_postgresql_data:/var/lib/postgresql/data
+    healthcheck: # healthcheck applied for flyway purpose...
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  pps_flyway:
+    image: flyway/flyway:latest
+    container_name: pps_flyway
+    command: >
+      -url=jdbc:${POSTGRES_URL}
+      -user=${POSTGRES_USER} 
+      -password=${POSTGRES_PASSWORD}
+      migrate
+    volumes:
+      - ./db_migrations:/flyway/sql # copy folder that contains all SQL scripts for the purpose of establishing a DB structure
+    depends_on:
+      # We must be sure that PostgreSQL server is fully ready and connection can be established.
+      # So to make sure that not only that the container is ready, but also PostgreSQL server,
+      # otherwise Flyway will exit immediately without doing a migration.
+      pps_postgresql:
+        condition: service_healthy
+
+  pps_zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.3
+    container_name: pps_zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+
+  pps_kafka:
+    image: confluentinc/cp-kafka:7.4.3
+    container_name: pps_kafka
+    ports:
+      - "9092:9092" # for localhost (external access)
+      - "7071:7071" # expose Prometheus add-on to localhost (external access)
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: pps_zookeeper:2181
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+      # Define listeners on internal + external
+      KAFKA_LISTENERS: INTERNAL://0.0.0.0:19092,EXTERNAL://0.0.0.0:9092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://pps_kafka:19092,EXTERNAL://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+
+      # Use the internal listener for broker communication
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+
+      #JMX Exporter agent, for Prometheus add-on
+      KAFKA_OPTS: "-javaagent:/opt/jmx_exporter/jmx_prometheus_javaagent-1.4.0.jar=7071:/opt/jmx_exporter/kafka.yml"
+    volumes:
+      - ./observability:/opt/jmx_exporter # Where Prometheus add-on and Kafka-Prometheus config are stored
+    depends_on:
+      - pps_zookeeper
+
+  pps_airflow:
+    image: apache/airflow:slim-2.10.5-python3.12
+    container_name: pps_airflow
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=False
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    volumes:
+      - ./orchestration/dags:/opt/airflow/dags
+      - /var/run/docker.sock:/var/run/docker.sock # Allow DockerOperator to run containers
+    ports:
+      - "8080:8080"
+    command: standalone
+
+  pps_superset:
+    build:
+      context: ./superset/
+    container_name: pps_superset
+    # proper way would be to use secrets, for the demo purpose I left it here as a plain text
+    environment:
+      - ADMIN_USERNAME=${SUPERSET_ADMIN_USERNAME}
+      - ADMIN_EMAIL=${SUPERSET_ADMIN_EMAIL}
+      - ADMIN_PASSWORD=${SUPERSET_ADMIN_PASSWORD}
+    ports:
+      - "8088:8088"
+    depends_on:
+      pps_postgresql:
+        condition: service_healthy
+
+  pps_prometheus:
+    image: prom/prometheus
+    container_name: pps_prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    volumes:
+      - ./observability/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  pps_grafana:
+    image: grafana/grafana:latest
+    container_name: pps_grafana
+    ports:
+      - "3000:3000" # host:container port mapping
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_SECURITY_ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_SECURITY_ADMIN_PASSWORD}
+    depends_on:
+      - pps_prometheus
+
+  pps_elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.0.0
+    container_name: pps_elasticsearch
+    ports:
+      - "9200:9200"
+    # Set max memory for the container, otherwise it will eat everything ;)
+    mem_limit: 1596m
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      # Also limit on JVM too... 1.5 GB container, JVM 1GB
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+
+  pps_kibana:
+    image: docker.elastic.co/kibana/kibana:9.0.0
+    container_name: pps_kibana
+    ports:
+      - "5601:5601"
+    environment:
+      ELASTICSEARCH_HOSTS: http://pps_elasticsearch:9200
+    depends_on:
+      - pps_elasticsearch
+
+  pps_consumer:
+    build:
+      context: ./transactions_stream_loading
+    container_name: pps_consumer
+    tty: true
+    depends_on:
+      pps_postgresql:
+        condition: service_healthy
+      pps_flyway:
+        condition: service_started
+      pps_kafka:
+        condition: service_started
+
+  pps_dbt:
+    build:
+      context: ./data_processing/firstcircle
+    container_name: pps_dbt
+    tty: true
+    depends_on:
+      pps_postgresql:
+        condition: service_healthy
+      pps_flyway:
+        condition: service_started
+
+volumes:
+  pps_postgresql_data:
