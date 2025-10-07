@@ -109,7 +109,7 @@ def generate_transactions(
         currency_skewed: Optional[bool] = False,
         status_skewed: Optional[bool] = False,
         people_skewed: Optional[bool] = False
-                          ) -> list[Transaction] | Iterator[Transaction]:
+    ) -> list[Transaction] | Iterator[Transaction]:
     
     if seed is not None:
         random.seed(seed)

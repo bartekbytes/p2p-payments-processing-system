@@ -1,0 +1,14 @@
+pydantic
+python-json-logger
+python-dotenv
+requests
+streamlit # ui
+fastapi # api
+uvicorn # api
+kafka-python # api
+
+
+# local packages
+common_config-1.0.0-py3-none-any.whl
+common_logger-1.0.0-py3-none-any.whl
+common_models-1.0.0-py3-none-any.whl
