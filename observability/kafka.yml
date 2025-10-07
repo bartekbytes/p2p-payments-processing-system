@@ -1,0 +1,32 @@
+startDelaySeconds: 0
+lowercaseOutputName: true
+lowercaseOutputLabelNames: true
+rules:
+  # Per-topic metrics (required for Grafana 721)
+  - pattern: "kafka.server<type=BrokerTopicMetrics, name=(.+)PerSec, topic=(.+)><>Count"
+    name: kafka_server_brokertopicmetrics_$1_total
+    labels:
+      topic: "$2"
+    type: COUNTER
+
+  # Broker-level totals (no topic)
+  - pattern: "kafka.server<type=BrokerTopicMetrics, name=(.+)PerSec><>Count"
+    name: kafka_server_broker_$1_total
+    type: COUNTER
+
+  # Network request metrics per request type
+  - pattern: "kafka.network<type=RequestMetrics, name=(.+)PerSec, request=(.+)><>Count"
+    name: kafka_network_requestmetrics_$1_total
+    labels:
+      request: "$2"
+    type: COUNTER
+
+  # Failed requests
+  - pattern: "kafka.server<type=RequestMetrics, name=(.+)PerSec><>Count"
+    name: kafka_server_requestmetrics_$1_total
+    type: COUNTER
+
+  # Catch-all for everything else
+  - pattern: ".*"
+    name: "$0"
+    type: GAUGE
