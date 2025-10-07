@@ -1,0 +1,97 @@
+slice_name: AuditTransactionErrors
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 13__table
+  viz_type: table
+  slice_id: 29
+  query_mode: raw
+  groupby: []
+  temporal_columns_lookup:
+    timestamp: true
+    created_at: true
+  all_columns:
+  - expressionType: SQL
+    label: id
+    sqlExpression: id::VARCHAR(20)
+  - expressionType: SQL
+    label: load_id
+    sqlExpression: load_id::VARCHAR(20)
+  - expressionType: SQL
+    label: line_number
+    sqlExpression: line_number::VARCHAR(20)
+  - expressionType: SQL
+    label: transaction_id
+    sqlExpression: transaction_id::VARCHAR(20)
+  - expressionType: SQL
+    label: sender_id
+    sqlExpression: sender_id::VARCHAR(20)
+  - expressionType: SQL
+    label: receiver_id
+    sqlExpression: receiver_id::VARCHAR(20)
+  - currency
+  - expressionType: SQL
+    label: amount
+    sqlExpression: amount::VARCHAR(20)
+  - status
+  - timestamp
+  - error_type
+  - error
+  - created_at
+  percent_metrics: []
+  adhoc_filters:
+  - clause: WHERE
+    comparator: No filter
+    expressionType: SIMPLE
+    operator: TEMPORAL_RANGE
+    subject: timestamp
+  order_by_cols: []
+  row_limit: 1000
+  table_timestamp_format: smart_date
+  include_search: true
+  allow_rearrange_columns: true
+  allow_render_html: true
+  show_cell_bars: true
+  color_pn: true
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 4
+  annotation_layers: []
+query_context: '{"datasource": {"id": 13, "type": "table"}, "force": false, "queries":
+  [{"filters": [{"col": "timestamp", "op": "TEMPORAL_RANGE", "val": "No filter"}],
+  "extras": {"having": "", "where": ""}, "applied_time_extras": {}, "columns": [{"expressionType":
+  "SQL", "label": "id", "sqlExpression": "id::VARCHAR(20)"}, {"expressionType": "SQL",
+  "label": "load_id", "sqlExpression": "load_id::VARCHAR(20)"}, {"expressionType":
+  "SQL", "label": "line_number", "sqlExpression": "line_number::VARCHAR(20)"}, {"expressionType":
+  "SQL", "label": "transaction_id", "sqlExpression": "transaction_id::VARCHAR(20)"},
+  {"expressionType": "SQL", "label": "sender_id", "sqlExpression": "sender_id::VARCHAR(20)"},
+  {"expressionType": "SQL", "label": "receiver_id", "sqlExpression": "receiver_id::VARCHAR(20)"},
+  "currency", {"expressionType": "SQL", "label": "amount", "sqlExpression": "amount::VARCHAR(20)"},
+  "status", "timestamp", "error_type", "error", "created_at"], "orderby": [], "annotation_layers":
+  [], "row_limit": 1000, "series_limit": 0, "order_desc": true, "url_params": {},
+  "custom_params": {}, "custom_form_data": {}, "post_processing": [], "time_offsets":
+  []}], "form_data": {"datasource": "13__table", "viz_type": "table", "slice_id":
+  29, "query_mode": "raw", "groupby": [], "temporal_columns_lookup": {"timestamp":
+  true, "created_at": true}, "all_columns": [{"expressionType": "SQL", "label": "id",
+  "sqlExpression": "id::VARCHAR(20)"}, {"expressionType": "SQL", "label": "load_id",
+  "sqlExpression": "load_id::VARCHAR(20)"}, {"expressionType": "SQL", "label": "line_number",
+  "sqlExpression": "line_number::VARCHAR(20)"}, {"expressionType": "SQL", "label":
+  "transaction_id", "sqlExpression": "transaction_id::VARCHAR(20)"}, {"expressionType":
+  "SQL", "label": "sender_id", "sqlExpression": "sender_id::VARCHAR(20)"}, {"expressionType":
+  "SQL", "label": "receiver_id", "sqlExpression": "receiver_id::VARCHAR(20)"}, "currency",
+  {"expressionType": "SQL", "label": "amount", "sqlExpression": "amount::VARCHAR(20)"},
+  "status", "timestamp", "error_type", "error", "created_at"], "percent_metrics":
+  [], "adhoc_filters": [{"clause": "WHERE", "comparator": "No filter", "expressionType":
+  "SIMPLE", "operator": "TEMPORAL_RANGE", "subject": "timestamp"}], "order_by_cols":
+  [], "row_limit": 1000, "table_timestamp_format": "smart_date", "include_search":
+  true, "allow_rearrange_columns": true, "allow_render_html": true, "show_cell_bars":
+  true, "color_pn": true, "conditional_formatting": [], "extra_form_data": {}, "dashboards":
+  [4], "force": false, "result_format": "json", "result_type": "full", "include_time":
+  false}, "result_format": "json", "result_type": "full"}'
+cache_timeout: null
+uuid: ddf0d1ee-6ff5-4656-b175-595a91d1dda8
+version: 1.0.0
+dataset_uuid: 58f7f7b2-db38-4fd9-a0fd-a35dce4dc587

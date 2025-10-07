@@ -1,0 +1,51 @@
+slice_name: AvgTransactionsPerDay30d
+description: null
+certified_by: null
+certification_details: null
+viz_type: big_number_total
+params:
+  datasource: 1__table
+  viz_type: big_number_total
+  slice_id: 12
+  metric:
+    aggregate: null
+    column: null
+    datasourceWarning: false
+    expressionType: SQL
+    hasCustomLabel: false
+    label: COUNT(*) / (MAX(date) - MIN(date))
+    optionName: metric_ev81adrt6h_ie7reg3gr6
+    sqlExpression: COUNT(*) / (MAX(date) - MIN(date))
+  adhoc_filters:
+  - clause: WHERE
+    comparator: Last month
+    datasourceWarning: false
+    expressionType: SIMPLE
+    filterOptionName: filter_5gt278r9g0f_6mx1kj8qvwa
+    isExtra: false
+    isNew: false
+    operator: TEMPORAL_RANGE
+    sqlExpression: null
+    subject: date
+  subheader: 'Avg #Transactions per Day (30d)'
+  header_font_size: 0.6
+  subheader_font_size: 0.125
+  y_axis_format: SMART_NUMBER
+  time_format: smart_date
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 1
+  annotation_layers: []
+query_context: '{"datasource":{"id":1,"type":"table"},"force":false,"queries":[{"filters":[{"col":"date","op":"TEMPORAL_RANGE","val":"Last
+  month"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":[],"metrics":[{"aggregate":null,"column":null,"datasourceWarning":false,"expressionType":"SQL","hasCustomLabel":false,"label":"COUNT(*)
+  / (MAX(date) - MIN(date))","optionName":"metric_ev81adrt6h_ie7reg3gr6","sqlExpression":"COUNT(*)
+  / (MAX(date) - MIN(date))"}],"annotation_layers":[],"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"1__table","viz_type":"big_number_total","slice_id":12,"metric":{"aggregate":null,"column":null,"datasourceWarning":false,"expressionType":"SQL","hasCustomLabel":false,"label":"COUNT(*)
+  / (MAX(date) - MIN(date))","optionName":"metric_ev81adrt6h_ie7reg3gr6","sqlExpression":"COUNT(*)
+  / (MAX(date) - MIN(date))"},"adhoc_filters":[{"clause":"WHERE","comparator":"Last
+  month","datasourceWarning":false,"expressionType":"SIMPLE","filterOptionName":"filter_5gt278r9g0f_6mx1kj8qvwa","isExtra":false,"isNew":false,"operator":"TEMPORAL_RANGE","sqlExpression":null,"subject":"date"}],"subheader":"Avg
+  #Transactions per Day (30d)","header_font_size":0.6,"subheader_font_size":0.125,"y_axis_format":"SMART_NUMBER","time_format":"smart_date","conditional_formatting":[],"extra_form_data":{},"dashboards":[1],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: fc7405d4-7092-4f20-b8cf-a64239f94917
+version: 1.0.0
+dataset_uuid: 4afb8409-9d20-49b2-8791-d74b58810204

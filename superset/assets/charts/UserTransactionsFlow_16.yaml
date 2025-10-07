@@ -1,0 +1,55 @@
+slice_name: UserTransactionsFlow
+description: null
+certified_by: null
+certification_details: null
+viz_type: chord
+params:
+  datasource: 10__table
+  viz_type: chord
+  groupby: sender
+  columns: receiver
+  metric:
+    expressionType: SIMPLE
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: amount
+      description: null
+      expression: ''
+      filterable: true
+      groupby: true
+      id: 48
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: DECIMAL
+      type_generic: 0
+      verbose_name: null
+      warning_markdown: null
+    aggregate: COUNT
+    sqlExpression: null
+    datasourceWarning: false
+    hasCustomLabel: false
+    label: COUNT(amount)
+    optionName: metric_woiv77c6k99_4w8s3cx9pxj
+  adhoc_filters:
+  - clause: WHERE
+    subject: date
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  row_limit: 50000
+  y_axis_format: SMART_NUMBER
+  color_scheme: supersetColors
+  extra_form_data: {}
+  dashboards:
+  - 3
+  annotation_layers: []
+query_context: '{"datasource":{"id":10,"type":"table"},"force":false,"queries":[{"filters":[{"col":"date","op":"TEMPORAL_RANGE","val":"No
+  filter"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["sender","receiver"],"metrics":[{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"amount","description":null,"expression":"","filterable":true,"groupby":true,"id":48,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"DECIMAL","type_generic":0,"verbose_name":null,"warning_markdown":null},"aggregate":"COUNT","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"COUNT(amount)","optionName":"metric_woiv77c6k99_4w8s3cx9pxj"}],"annotation_layers":[],"row_limit":50000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"10__table","viz_type":"chord","groupby":"sender","columns":"receiver","metric":{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"amount","description":null,"expression":"","filterable":true,"groupby":true,"id":48,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"DECIMAL","type_generic":0,"verbose_name":null,"warning_markdown":null},"aggregate":"COUNT","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"COUNT(amount)","optionName":"metric_woiv77c6k99_4w8s3cx9pxj"},"adhoc_filters":[{"clause":"WHERE","subject":"date","operator":"TEMPORAL_RANGE","comparator":"No
+  filter","expressionType":"SIMPLE"}],"row_limit":50000,"y_axis_format":"SMART_NUMBER","color_scheme":"supersetColors","extra_form_data":{},"dashboards":[3],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: e67eca63-ef46-4f5e-951f-31a1eb5de56a
+version: 1.0.0
+dataset_uuid: 5a804353-d143-4c74-aa5f-60a7d5ced6e2

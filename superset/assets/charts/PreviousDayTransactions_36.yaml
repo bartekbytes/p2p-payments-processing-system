@@ -1,0 +1,66 @@
+slice_name: PreviousDayTransactions
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 16__table
+  viz_type: table
+  slice_id: 35
+  query_mode: raw
+  groupby: []
+  time_grain_sqla: P1D
+  temporal_columns_lookup:
+    transaction_date: true
+    transaction_datetime: true
+  metrics: []
+  all_columns:
+  - transaction_id
+  - transaction_date
+  - transaction_datetime
+  - sender
+  - receiver
+  - status
+  - currency
+  - amount
+  - expressionType: SQL
+    label: load_id
+    sqlExpression: load_id::VARCHAR(20)
+  percent_metrics: []
+  adhoc_filters:
+  - expressionType: SIMPLE
+    subject: transaction_date
+    operator: TEMPORAL_RANGE
+    comparator: Last day
+    clause: WHERE
+    sqlExpression: null
+    isExtra: false
+    isNew: false
+    datasourceWarning: false
+    filterOptionName: filter_p5n7r9eh5y_vi9c8dcqgr
+  order_by_cols: []
+  server_pagination: true
+  row_limit: 1000
+  server_page_length: 50
+  order_desc: true
+  table_timestamp_format: smart_date
+  allow_render_html: true
+  column_config:
+    transaction_datetime:
+      d3TimeFormat: '%Y-%m-%d %H:%M:%S'
+  show_cell_bars: true
+  color_pn: true
+  comparison_color_scheme: Green
+  conditional_formatting: []
+  comparison_type: values
+  extra_form_data: {}
+  dashboards: []
+query_context: '{"datasource":{"id":16,"type":"table"},"force":false,"queries":[{"filters":[{"col":"transaction_date","op":"TEMPORAL_RANGE","val":"Last
+  day"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["transaction_id","transaction_date","transaction_datetime","sender","receiver","status","currency","amount",{"expressionType":"SQL","label":"load_id","sqlExpression":"load_id::VARCHAR(20)"}],"orderby":[],"annotation_layers":[],"row_limit":50,"row_offset":0,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[],"time_offsets":[]},{"filters":[{"col":"transaction_date","op":"TEMPORAL_RANGE","val":"Last
+  day"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["transaction_id","transaction_date","transaction_datetime","sender","receiver","status","currency","amount",{"expressionType":"SQL","label":"load_id","sqlExpression":"load_id::VARCHAR(20)"}],"orderby":[],"annotation_layers":[],"row_limit":0,"row_offset":0,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[],"time_offsets":[],"is_rowcount":true}],"form_data":{"datasource":"16__table","viz_type":"table","slice_id":35,"query_mode":"raw","groupby":[],"time_grain_sqla":"P1D","temporal_columns_lookup":{"transaction_date":true,"transaction_datetime":true},"metrics":[],"all_columns":["transaction_id","transaction_date","transaction_datetime","sender","receiver","status","currency","amount",{"expressionType":"SQL","label":"load_id","sqlExpression":"load_id::VARCHAR(20)"}],"percent_metrics":[],"adhoc_filters":[{"expressionType":"SIMPLE","subject":"transaction_date","operator":"TEMPORAL_RANGE","comparator":"Last
+  day","clause":"WHERE","sqlExpression":null,"isExtra":false,"isNew":false,"datasourceWarning":false,"filterOptionName":"filter_p5n7r9eh5y_vi9c8dcqgr"}],"order_by_cols":[],"server_pagination":true,"row_limit":1000,"server_page_length":50,"order_desc":true,"table_timestamp_format":"smart_date","allow_render_html":true,"column_config":{"transaction_datetime":{"d3TimeFormat":"%Y-%m-%d
+  %H:%M:%S"}},"show_cell_bars":true,"color_pn":true,"comparison_color_scheme":"Green","conditional_formatting":[],"comparison_type":"values","extra_form_data":{},"dashboards":[],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 1f895801-338b-419f-980b-0ecee453e240
+version: 1.0.0
+dataset_uuid: de980972-83e3-4a38-9ad2-e634127e0bf3

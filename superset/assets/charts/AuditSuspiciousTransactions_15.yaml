@@ -1,0 +1,73 @@
+slice_name: AuditSuspiciousTransactions
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 14__table
+  viz_type: table
+  query_mode: raw
+  groupby: []
+  time_grain_sqla: P1D
+  temporal_columns_lookup:
+    created_at: true
+  all_columns:
+  - label: id
+    sqlExpression: id::VARCHAR(20)
+    expressionType: SQL
+  - label: load_id
+    sqlExpression: load_id::VARCHAR(20)
+    expressionType: SQL
+  - transaction_id
+  - violation_severity
+  - violation_reason
+  - created_at
+  percent_metrics: []
+  adhoc_filters:
+  - clause: WHERE
+    subject: created_at
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  order_by_cols: []
+  row_limit: 1000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  include_search: true
+  allow_rearrange_columns: true
+  allow_render_html: true
+  show_cell_bars: true
+  color_pn: true
+  comparison_color_scheme: Green
+  conditional_formatting: []
+  comparison_type: values
+  extra_form_data: {}
+  dashboards:
+  - 4
+  annotation_layers: []
+query_context: '{"datasource": {"id": 14, "type": "table"}, "force": false, "queries":
+  [{"filters": [{"col": "created_at", "op": "TEMPORAL_RANGE", "val": "No filter"}],
+  "extras": {"having": "", "where": ""}, "applied_time_extras": {}, "columns": [{"label":
+  "id", "sqlExpression": "id::VARCHAR(20)", "expressionType": "SQL"}, {"label": "load_id",
+  "sqlExpression": "load_id::VARCHAR(20)", "expressionType": "SQL"}, "transaction_id",
+  "violation_severity", "violation_reason", "created_at"], "orderby": [], "annotation_layers":
+  [], "row_limit": 1000, "series_limit": 0, "order_desc": true, "url_params": {},
+  "custom_params": {}, "custom_form_data": {}, "post_processing": [], "time_offsets":
+  []}], "form_data": {"datasource": "14__table", "viz_type": "table", "query_mode":
+  "raw", "groupby": [], "time_grain_sqla": "P1D", "temporal_columns_lookup": {"created_at":
+  true}, "all_columns": [{"label": "id", "sqlExpression": "id::VARCHAR(20)", "expressionType":
+  "SQL"}, {"label": "load_id", "sqlExpression": "load_id::VARCHAR(20)", "expressionType":
+  "SQL"}, "transaction_id", "violation_severity", "violation_reason", "created_at"],
+  "percent_metrics": [], "adhoc_filters": [{"clause": "WHERE", "subject": "created_at",
+  "operator": "TEMPORAL_RANGE", "comparator": "No filter", "expressionType": "SIMPLE"}],
+  "order_by_cols": [], "row_limit": 1000, "server_page_length": 10, "order_desc":
+  true, "table_timestamp_format": "smart_date", "include_search": true, "allow_rearrange_columns":
+  true, "allow_render_html": true, "show_cell_bars": true, "color_pn": true, "comparison_color_scheme":
+  "Green", "conditional_formatting": [], "comparison_type": "values", "extra_form_data":
+  {}, "dashboards": [4], "force": false, "result_format": "json", "result_type": "full",
+  "include_time": false}, "result_format": "json", "result_type": "full"}'
+cache_timeout: null
+uuid: 44c4ea82-835c-486e-be35-4375ced784d8
+version: 1.0.0
+dataset_uuid: 33191eba-3ba2-430e-b494-103568095815

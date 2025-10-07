@@ -1,0 +1,94 @@
+slice_name: TopViolationRulesSenders
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 11__table
+  viz_type: table
+  slice_id: 24
+  query_mode: aggregate
+  groupby:
+  - sender
+  - violation_severity
+  temporal_columns_lookup:
+    transaction_date: true
+  metrics:
+  - aggregate: COUNT
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: violation_severity
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 50
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: STRING
+      type_generic: 1
+      verbose_name: null
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: false
+    label: COUNT(violation_severity)
+    optionName: metric_3ncvgiu539j_s01w4xgehac
+    sqlExpression: null
+  all_columns: []
+  percent_metrics: []
+  adhoc_filters:
+  - clause: WHERE
+    subject: transaction_date
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  timeseries_limit_metric:
+    aggregate: COUNT
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: violation_severity
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 50
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: STRING
+      type_generic: 1
+      verbose_name: null
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: false
+    label: COUNT(violation_severity)
+    optionName: metric_cfx60urg9sb_lfsrfouilhs
+    sqlExpression: null
+  order_by_cols: []
+  row_limit: 50000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  allow_render_html: true
+  show_cell_bars: true
+  color_pn: true
+  comparison_color_scheme: Green
+  comparison_type: values
+  extra_form_data: {}
+  dashboards:
+  - 3
+  annotation_layers: []
+query_context: '{"datasource":{"id":11,"type":"table"},"force":false,"queries":[{"filters":[{"col":"transaction_date","op":"TEMPORAL_RANGE","val":"No
+  filter"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["sender","violation_severity"],"metrics":[{"aggregate":"COUNT","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"violation_severity","description":null,"expression":null,"filterable":true,"groupby":true,"id":50,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"STRING","type_generic":1,"verbose_name":null,"warning_markdown":null},"datasourceWarning":false,"expressionType":"SIMPLE","hasCustomLabel":false,"label":"COUNT(violation_severity)","optionName":"metric_3ncvgiu539j_s01w4xgehac","sqlExpression":null}],"orderby":[[{"aggregate":"COUNT","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"violation_severity","description":null,"expression":null,"filterable":true,"groupby":true,"id":50,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"STRING","type_generic":1,"verbose_name":null,"warning_markdown":null},"datasourceWarning":false,"expressionType":"SIMPLE","hasCustomLabel":false,"label":"COUNT(violation_severity)","optionName":"metric_cfx60urg9sb_lfsrfouilhs","sqlExpression":null},false]],"annotation_layers":[],"row_limit":50000,"series_limit":0,"series_limit_metric":{"aggregate":"COUNT","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"violation_severity","description":null,"expression":null,"filterable":true,"groupby":true,"id":50,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"STRING","type_generic":1,"verbose_name":null,"warning_markdown":null},"datasourceWarning":false,"expressionType":"SIMPLE","hasCustomLabel":false,"label":"COUNT(violation_severity)","optionName":"metric_cfx60urg9sb_lfsrfouilhs","sqlExpression":null},"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[],"time_offsets":[]}],"form_data":{"datasource":"11__table","viz_type":"table","slice_id":24,"query_mode":"aggregate","groupby":["sender","violation_severity"],"temporal_columns_lookup":{"transaction_date":true},"metrics":[{"aggregate":"COUNT","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"violation_severity","description":null,"expression":null,"filterable":true,"groupby":true,"id":50,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"STRING","type_generic":1,"verbose_name":null,"warning_markdown":null},"datasourceWarning":false,"expressionType":"SIMPLE","hasCustomLabel":false,"label":"COUNT(violation_severity)","optionName":"metric_3ncvgiu539j_s01w4xgehac","sqlExpression":null}],"all_columns":[],"percent_metrics":[],"adhoc_filters":[{"clause":"WHERE","subject":"transaction_date","operator":"TEMPORAL_RANGE","comparator":"No
+  filter","expressionType":"SIMPLE"}],"timeseries_limit_metric":{"aggregate":"COUNT","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"violation_severity","description":null,"expression":null,"filterable":true,"groupby":true,"id":50,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"STRING","type_generic":1,"verbose_name":null,"warning_markdown":null},"datasourceWarning":false,"expressionType":"SIMPLE","hasCustomLabel":false,"label":"COUNT(violation_severity)","optionName":"metric_cfx60urg9sb_lfsrfouilhs","sqlExpression":null},"order_by_cols":[],"row_limit":50000,"server_page_length":10,"order_desc":true,"table_timestamp_format":"smart_date","allow_render_html":true,"show_cell_bars":true,"color_pn":true,"comparison_color_scheme":"Green","comparison_type":"values","extra_form_data":{},"dashboards":[3],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 2dbdebcd-9bfb-41f1-84a9-b56fc0045e94
+version: 1.0.0
+dataset_uuid: 8abaf12b-15eb-4b98-bbf6-61a692e508ca

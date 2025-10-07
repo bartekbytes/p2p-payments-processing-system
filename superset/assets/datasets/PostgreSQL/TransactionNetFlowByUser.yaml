@@ -1,0 +1,78 @@
+table_name: TransactionNetFlowByUser
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: pps
+schema: null
+sql: "; with amount_as_sender as \r\n(\r\n    select t.sender_key, t.currency_key,\
+  \ sum(t.amount) amount_sent\r\n    from fc_dm.fact_transaction t\r\n    where t.date_key\
+  \ >= now() - INTERVAL '30 DAYS'\r\n    group by t.sender_key, t.currency_key\r\n\
+  )\r\n,\r\namount_as_receiver as \r\n(\r\n    select t.receiver_key, t.currency_key,\
+  \ sum(t.amount) amount_received\r\n    from fc_dm.fact_transaction t\r\n    where\
+  \ t.date_key >= now() - INTERVAL '30 DAYS'\r\n    group by t.receiver_key, t.currency_key\r\
+  \n)\r\n,\r\nnet_flow\r\nas\r\n(\r\nselect aas.sender_key as user_key, aas.currency_key,\
+  \ aar.amount_received - aas.amount_sent net_flow\r\nfrom amount_as_sender aas\r\n\
+  inner join amount_as_receiver aar\r\n    on \r\n        aas.sender_key = aar.receiver_key\
+  \ and \r\n        aas.currency_key = aar.currency_key\r\n)\r\nselect u.first_name\
+  \ || ' ' || u.last_name user, c.currency_code, nf.net_flow\r\nfrom net_flow nf\r\
+  \ninner join fc_dm.dim_user u\r\n    on nf.user_key = u.user_key\r\ninner join fc_dm.dim_currency\
+  \ c\r\n    on nf.currency_key = c.currency_key\r\norder by 1,2"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 74b6a1e4-e5f9-4ea9-af56-355f429cb7ec
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: net_flow
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: currency_code
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: user
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: c90d2e3a-b2c8-45ee-b3a0-5d468ca917dd

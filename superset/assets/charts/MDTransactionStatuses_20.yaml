@@ -1,0 +1,37 @@
+slice_name: MDTransactionStatuses
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 8__table
+  viz_type: table
+  query_mode: raw
+  groupby: []
+  time_grain_sqla: P1D
+  temporal_columns_lookup: {}
+  all_columns:
+  - label: transaction_status_id
+    sqlExpression: transaction_status_id::VARCHAR(50)
+    expressionType: SQL
+  - transaction_status
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols: []
+  row_limit: 1000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  allow_render_html: true
+  show_cell_bars: true
+  color_pn: true
+  comparison_color_scheme: Green
+  comparison_type: values
+  extra_form_data: {}
+  dashboards: []
+  annotation_layers: []
+query_context: '{"datasource":{"id":8,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":[{"label":"transaction_status_id","sqlExpression":"transaction_status_id::VARCHAR(50)","expressionType":"SQL"},"transaction_status"],"orderby":[],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[],"time_offsets":[]}],"form_data":{"datasource":"8__table","viz_type":"table","query_mode":"raw","groupby":[],"time_grain_sqla":"P1D","temporal_columns_lookup":{},"all_columns":[{"label":"transaction_status_id","sqlExpression":"transaction_status_id::VARCHAR(50)","expressionType":"SQL"},"transaction_status"],"percent_metrics":[],"adhoc_filters":[],"order_by_cols":[],"row_limit":1000,"server_page_length":10,"order_desc":true,"table_timestamp_format":"smart_date","allow_render_html":true,"show_cell_bars":true,"color_pn":true,"comparison_color_scheme":"Green","comparison_type":"values","extra_form_data":{},"dashboards":[],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 4c8b7d54-448d-4ce5-a79e-c004db71c133
+version: 1.0.0
+dataset_uuid: bece2298-dce9-4754-8b41-ca75e69a2f16

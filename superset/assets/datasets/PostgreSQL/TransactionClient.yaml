@@ -1,0 +1,223 @@
+table_name: TransactionClient
+main_dttm_col: date
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: pps
+schema: main
+sql: "SELECT \n  cal.date_key as date,\n  snr.first_name || ' ' || snr.last_name sender,\n\
+  \  rcv.first_name || ' ' || rcv.last_name receiver,\n  cur.currency_name, cur.currency_code,\
+  \ \n  ts.transaction_status,\n  snr.age_bucket_decade sender_age_bucket_decade,\n\
+  \  snr.age_bucket_life_stage sender_age_bucket_life_stage,\n  snr.age_bucket_life_stage_name\
+  \ sender_age_bucket_life_stage_name,\n  snr.age_bucket_life_stage_name || ' (' ||\
+  \ snr.age_bucket_life_stage || ')' sender_age_bucket_stage,\n  rcv.age_bucket_decade\
+  \ receiver_age_bucket_decade,\n  rcv.age_bucket_life_stage receiver_age_bucket_life_stage,\n\
+  \  rcv.age_bucket_life_stage_name receiver_age_bucket_life_stage_name,\n  snr.age_bucket_life_stage_name\
+  \ || ' (' || snr.age_bucket_life_stage || ')' receiver_age_bucket_stage,\n  t.amount\n\
+  FROM fc_dm.fact_transaction t\nINNER JOIN fc_dm.dim_user snr\n  ON t.sender_key\
+  \ = snr.user_key\nINNER JOIN fc_dm.dim_user rcv\n  ON t.receiver_key = rcv.user_key\n\
+  INNER JOIN fc_dm.dim_currency cur\n  ON t.currency_key = cur.currency_key\nINNER\
+  \ JOIN fc_dm.dim_transaction_status ts\n  ON t.transaction_status_key = ts.transaction_status_key\n\
+  INNER JOIN fc_dm.dim_calendar cal\n  ON t.date_key = cal.date_key"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+uuid: 5a804353-d143-4c74-aa5f-60a7d5ced6e2
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: amount
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DECIMAL
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: date
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: receiver_age_bucket_life_stage_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: sender_age_bucket_life_stage_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: receiver_age_bucket_life_stage
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: sender_age_bucket_life_stage
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: receiver_age_bucket_decade
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: sender_age_bucket_decade
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: receiver_age_bucket_stage
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: sender_age_bucket_stage
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: transaction_status
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: currency_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: currency_code
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: receiver
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: sender
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: c90d2e3a-b2c8-45ee-b3a0-5d468ca917dd

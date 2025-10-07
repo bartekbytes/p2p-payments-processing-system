@@ -1,0 +1,78 @@
+slice_name: AuditLoadingProcessDetails
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 12__table
+  viz_type: table
+  slice_id: 28
+  query_mode: raw
+  groupby: []
+  temporal_columns_lookup:
+    start_time: true
+    end_time: true
+  metrics: []
+  all_columns:
+  - expressionType: SQL
+    label: load_id
+    sqlExpression: load_id::VARCHAR(20)
+  - source_system_name
+  - file_name
+  - mode
+  - start_time
+  - end_time
+  - duration_seconds
+  - process_status
+  - total_rows
+  - approved_rows
+  - rejected_rows
+  - suspicious_cases
+  percent_metrics: []
+  adhoc_filters:
+  - clause: WHERE
+    comparator: No filter
+    expressionType: SIMPLE
+    operator: TEMPORAL_RANGE
+    subject: start_time
+  order_by_cols:
+  - '["load_id", false]'
+  row_limit: 1000
+  table_timestamp_format: smart_date
+  include_search: true
+  allow_rearrange_columns: true
+  allow_render_html: true
+  show_cell_bars: true
+  align_pn: false
+  color_pn: true
+  conditional_formatting: []
+  extra_form_data: {}
+  dashboards:
+  - 4
+  annotation_layers: []
+query_context: '{"datasource": {"id": 12, "type": "table"}, "force": false, "queries":
+  [{"filters": [{"col": "start_time", "op": "TEMPORAL_RANGE", "val": "No filter"}],
+  "extras": {"having": "", "where": ""}, "applied_time_extras": {}, "columns": [{"expressionType":
+  "SQL", "label": "load_id", "sqlExpression": "load_id::VARCHAR(20)"}, "source_system_name",
+  "file_name", "mode", "start_time", "end_time", "duration_seconds", "process_status",
+  "total_rows", "approved_rows", "rejected_rows", "suspicious_cases"], "orderby":
+  [["load_id", false]], "annotation_layers": [], "row_limit": 1000, "series_limit":
+  0, "order_desc": true, "url_params": {}, "custom_params": {}, "custom_form_data":
+  {}, "post_processing": [], "time_offsets": []}], "form_data": {"datasource": "12__table",
+  "viz_type": "table", "slice_id": 28, "query_mode": "raw", "groupby": [], "temporal_columns_lookup":
+  {"start_time": true, "end_time": true}, "metrics": [], "all_columns": [{"expressionType":
+  "SQL", "label": "load_id", "sqlExpression": "load_id::VARCHAR(20)"}, "source_system_name",
+  "file_name", "mode", "start_time", "end_time", "duration_seconds", "process_status",
+  "total_rows", "approved_rows", "rejected_rows", "suspicious_cases"], "percent_metrics":
+  [], "adhoc_filters": [{"clause": "WHERE", "comparator": "No filter", "expressionType":
+  "SIMPLE", "operator": "TEMPORAL_RANGE", "subject": "start_time"}], "order_by_cols":
+  ["[\"load_id\", false]"], "row_limit": 1000, "table_timestamp_format": "smart_date",
+  "include_search": true, "allow_rearrange_columns": true, "allow_render_html": true,
+  "show_cell_bars": true, "align_pn": false, "color_pn": true, "conditional_formatting":
+  [], "extra_form_data": {}, "dashboards": [4], "force": false, "result_format": "json",
+  "result_type": "full", "include_time": false}, "result_format": "json", "result_type":
+  "full"}'
+cache_timeout: null
+uuid: c1c96967-14d2-47da-8dcb-b41239dd7d4a
+version: 1.0.0
+dataset_uuid: b0aec369-c7a3-4403-878b-97d8f77b890c

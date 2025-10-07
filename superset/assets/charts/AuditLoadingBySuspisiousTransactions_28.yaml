@@ -1,0 +1,106 @@
+slice_name: AuditLoadingBySuspisiousTransactions
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 14__table
+  viz_type: table
+  slice_id: 33
+  query_mode: aggregate
+  groupby:
+  - expressionType: SQL
+    label: load_id
+    sqlExpression: load_id::VARCHAR(20)
+  time_grain_sqla: P1D
+  temporal_columns_lookup:
+    created_at: true
+  metrics:
+  - aggregate: COUNT
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: load_id
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 78
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: INTEGER
+      type_generic: 0
+      verbose_name: null
+      warning_markdown: null
+    datasourceWarning: false
+    expressionType: SIMPLE
+    hasCustomLabel: false
+    label: COUNT(load_id)
+    optionName: metric_7h5bo8x8u08_z6twbtoda0b
+    sqlExpression: null
+  all_columns: []
+  percent_metrics: []
+  adhoc_filters:
+  - clause: WHERE
+    comparator: No filter
+    expressionType: SIMPLE
+    operator: TEMPORAL_RANGE
+    subject: created_at
+  order_by_cols: []
+  row_limit: 10000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  allow_render_html: true
+  show_cell_bars: true
+  color_pn: true
+  comparison_color_scheme: Green
+  conditional_formatting: []
+  comparison_type: values
+  extra_form_data: {}
+  dashboards:
+  - 4
+  annotation_layers: []
+query_context: '{"datasource": {"id": 14, "type": "table"}, "force": false, "queries":
+  [{"filters": [{"col": "created_at", "op": "TEMPORAL_RANGE", "val": "No filter"}],
+  "extras": {"having": "", "where": ""}, "applied_time_extras": {}, "columns": [{"expressionType":
+  "SQL", "label": "load_id", "sqlExpression": "load_id::VARCHAR(20)"}], "metrics":
+  [{"aggregate": "COUNT", "column": {"advanced_data_type": null, "certification_details":
+  null, "certified_by": null, "column_name": "load_id", "description": null, "expression":
+  null, "filterable": true, "groupby": true, "id": 78, "is_certified": false, "is_dttm":
+  false, "python_date_format": null, "type": "INTEGER", "type_generic": 0, "verbose_name":
+  null, "warning_markdown": null}, "datasourceWarning": false, "expressionType": "SIMPLE",
+  "hasCustomLabel": false, "label": "COUNT(load_id)", "optionName": "metric_7h5bo8x8u08_z6twbtoda0b",
+  "sqlExpression": null}], "orderby": [[{"aggregate": "COUNT", "column": {"advanced_data_type":
+  null, "certification_details": null, "certified_by": null, "column_name": "load_id",
+  "description": null, "expression": null, "filterable": true, "groupby": true, "id":
+  78, "is_certified": false, "is_dttm": false, "python_date_format": null, "type":
+  "INTEGER", "type_generic": 0, "verbose_name": null, "warning_markdown": null}, "datasourceWarning":
+  false, "expressionType": "SIMPLE", "hasCustomLabel": false, "label": "COUNT(load_id)",
+  "optionName": "metric_7h5bo8x8u08_z6twbtoda0b", "sqlExpression": null}, false]],
+  "annotation_layers": [], "row_limit": 10000, "series_limit": 0, "order_desc": true,
+  "url_params": {}, "custom_params": {}, "custom_form_data": {}, "post_processing":
+  [], "time_offsets": []}], "form_data": {"datasource": "14__table", "viz_type": "table",
+  "slice_id": 33, "query_mode": "aggregate", "groupby": [{"expressionType": "SQL",
+  "label": "load_id", "sqlExpression": "load_id::VARCHAR(20)"}], "time_grain_sqla":
+  "P1D", "temporal_columns_lookup": {"created_at": true}, "metrics": [{"aggregate":
+  "COUNT", "column": {"advanced_data_type": null, "certification_details": null, "certified_by":
+  null, "column_name": "load_id", "description": null, "expression": null, "filterable":
+  true, "groupby": true, "id": 78, "is_certified": false, "is_dttm": false, "python_date_format":
+  null, "type": "INTEGER", "type_generic": 0, "verbose_name": null, "warning_markdown":
+  null}, "datasourceWarning": false, "expressionType": "SIMPLE", "hasCustomLabel":
+  false, "label": "COUNT(load_id)", "optionName": "metric_7h5bo8x8u08_z6twbtoda0b",
+  "sqlExpression": null}], "all_columns": [], "percent_metrics": [], "adhoc_filters":
+  [{"clause": "WHERE", "comparator": "No filter", "expressionType": "SIMPLE", "operator":
+  "TEMPORAL_RANGE", "subject": "created_at"}], "order_by_cols": [], "row_limit": 10000,
+  "server_page_length": 10, "order_desc": true, "table_timestamp_format": "smart_date",
+  "allow_render_html": true, "show_cell_bars": true, "color_pn": true, "comparison_color_scheme":
+  "Green", "conditional_formatting": [], "comparison_type": "values", "extra_form_data":
+  {}, "dashboards": [4], "force": false, "result_format": "json", "result_type": "full"},
+  "result_format": "json", "result_type": "full"}'
+cache_timeout: null
+uuid: e0d7b102-4940-4673-8594-aa3f03ae0b24
+version: 1.0.0
+dataset_uuid: 33191eba-3ba2-430e-b494-103568095815

@@ -1,0 +1,280 @@
+dashboard_title: Audit
+description: null
+css: ''
+slug: null
+certified_by: ''
+certification_details: ''
+published: true
+uuid: 1f767ce5-5a9b-4c30-97e5-6b4944d60284
+position:
+  CHART-2Dafc44xIU48fNleQ7lXC:
+    children: []
+    id: CHART-2Dafc44xIU48fNleQ7lXC
+    meta:
+      chartId: 21
+      height: 37
+      sliceName: AuditLoadingByStatus
+      uuid: 1bc50fca-9e66-45e3-ba41-03194f8d5b57
+      width: 3
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-gQ_ZeZUPzffZsz800ok14
+    type: CHART
+  CHART-BsGmZEr3W-NH0Y0az-zmL:
+    children: []
+    id: CHART-BsGmZEr3W-NH0Y0az-zmL
+    meta:
+      chartId: 25
+      height: 50
+      sliceName: AuditLoadingProcessDetails
+      uuid: c1c96967-14d2-47da-8dcb-b41239dd7d4a
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-Gc8MGzyiodJelSsW5SJFJ
+    type: CHART
+  CHART-WnolXmS_8DaPYJFfjzhL0:
+    children: []
+    id: CHART-WnolXmS_8DaPYJFfjzhL0
+    meta:
+      chartId: 23
+      height: 37
+      sliceName: AuditLoadingProcessesNumber
+      uuid: 590853b8-0c56-4ee2-87b6-c9c57439796a
+      width: 3
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-gQ_ZeZUPzffZsz800ok14
+    type: CHART
+  CHART-cAppHm_tmMn0p10HPx91J:
+    children: []
+    id: CHART-cAppHm_tmMn0p10HPx91J
+    meta:
+      chartId: 28
+      height: 37
+      sliceName: AuditLoadingBySuspisiousTransactions
+      uuid: e0d7b102-4940-4673-8594-aa3f03ae0b24
+      width: 3
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-gQ_ZeZUPzffZsz800ok14
+    type: CHART
+  CHART-explore-29-1:
+    children: []
+    id: CHART-explore-29-1
+    meta:
+      chartId: 34
+      height: 50
+      sliceName: AuditTransactionErrors
+      uuid: ddf0d1ee-6ff5-4656-b175-595a91d1dda8
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-JkV_N0Iwe_LuBeql8rEFu
+    type: CHART
+  CHART-explore-30-1:
+    children: []
+    id: CHART-explore-30-1
+    meta:
+      chartId: 15
+      height: 50
+      sliceName: AuditSuspiciousTransactions
+      uuid: 44c4ea82-835c-486e-be35-4375ced784d8
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-apdf5rqqq8KqBSyxtMDYB
+    type: CHART
+  CHART-zO3_fmoqIFBTM4ADZBxQL:
+    children: []
+    id: CHART-zO3_fmoqIFBTM4ADZBxQL
+    meta:
+      chartId: 9
+      height: 37
+      sliceName: AuditLoadingByErrors
+      uuid: 4b4e619a-4a3b-425c-9522-7f47d8a4e940
+      width: 3
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-gQ_ZeZUPzffZsz800ok14
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - HEADER-m0JrjNX6ALA6OC0NKnNf3
+    - ROW-gQ_ZeZUPzffZsz800ok14
+    - ROW-Gc8MGzyiodJelSsW5SJFJ
+    - ROW-JkV_N0Iwe_LuBeql8rEFu
+    - ROW-apdf5rqqq8KqBSyxtMDYB
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER-m0JrjNX6ALA6OC0NKnNf3:
+    children: []
+    id: HEADER-m0JrjNX6ALA6OC0NKnNf3
+    meta:
+      background: BACKGROUND_TRANSPARENT
+      headerSize: MEDIUM_HEADER
+      text: Dashboard for Auditing Purpose (Loading Processes, Logged Errors, Suspicious
+        Transactions)
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: HEADER
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: Audit
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-Gc8MGzyiodJelSsW5SJFJ:
+    children:
+    - CHART-BsGmZEr3W-NH0Y0az-zmL
+    id: ROW-Gc8MGzyiodJelSsW5SJFJ
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-JkV_N0Iwe_LuBeql8rEFu:
+    children:
+    - CHART-explore-29-1
+    id: ROW-JkV_N0Iwe_LuBeql8rEFu
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-apdf5rqqq8KqBSyxtMDYB:
+    children:
+    - CHART-explore-30-1
+    id: ROW-apdf5rqqq8KqBSyxtMDYB
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-gQ_ZeZUPzffZsz800ok14:
+    children:
+    - CHART-WnolXmS_8DaPYJFfjzhL0
+    - CHART-2Dafc44xIU48fNleQ7lXC
+    - CHART-cAppHm_tmMn0p10HPx91J
+    - CHART-zO3_fmoqIFBTM4ADZBxQL
+    id: ROW-gQ_ZeZUPzffZsz800ok14
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  chart_configuration:
+    '28':
+      id: 28
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 29
+        - 30
+        - 31
+        - 32
+        - 33
+        - 34
+    '29':
+      id: 29
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 28
+        - 30
+        - 31
+        - 32
+        - 33
+        - 34
+    '30':
+      id: 30
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 28
+        - 29
+        - 31
+        - 32
+        - 33
+        - 34
+    '32':
+      id: 32
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 28
+        - 29
+        - 30
+        - 31
+        - 33
+        - 34
+    '33':
+      id: 33
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 28
+        - 29
+        - 30
+        - 31
+        - 32
+        - 34
+    '34':
+      id: 34
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 28
+        - 29
+        - 30
+        - 31
+        - 32
+        - 33
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 28
+    - 29
+    - 30
+    - 31
+    - 32
+    - 33
+    - 34
+  map_label_colors:
+    completed_errors_detected: '#29696B'
+    completed_no_errors: '#5BCACE'
+    SUM(errors): '#90042A'
+  color_scheme: ''
+  refresh_frequency: 0
+  color_scheme_domain: []
+  expanded_slices: {}
+  label_colors: {}
+  shared_label_colors: []
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  native_filter_configuration: []
+version: 1.0.0

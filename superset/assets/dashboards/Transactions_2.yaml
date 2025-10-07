@@ -1,0 +1,706 @@
+dashboard_title: Transactions
+description: null
+css: ''
+slug: null
+certified_by: ''
+certification_details: ''
+published: true
+uuid: bbd2ed56-3239-4d79-937c-b501ea447cdb
+position:
+  CHART-3VLlECFls6nT1P1--nRdN:
+    children: []
+    id: CHART-3VLlECFls6nT1P1--nRdN
+    meta:
+      chartId: 35
+      height: 83
+      sliceName: TransactionDetails
+      uuid: 9ddce957-390b-4b3d-80ab-eeba8d9b4fb8
+      width: 12
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-UaWHRwnG9DMDJWGMEpIq3
+    - ROW-aIBgs-dv3ewoXvocboluP
+    type: CHART
+  CHART-6J0fIGwT6gUV_qASZx2Tc:
+    children: []
+    id: CHART-6J0fIGwT6gUV_qASZx2Tc
+    meta:
+      chartId: 14
+      height: 29
+      sliceName: AvgTransactionsPerDay30d
+      uuid: fc7405d4-7092-4f20-b8cf-a64239f94917
+      width: 2
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-WFSmF0CsjBCN5JYJSTn6Z
+    type: CHART
+  CHART-B-TaZraVtEOTl-wJDzjZh:
+    children: []
+    id: CHART-B-TaZraVtEOTl-wJDzjZh
+    meta:
+      chartId: 6
+      height: 33
+      sliceName: CurrencyAmountSummary
+      uuid: 7cf7ed81-e60d-429e-b650-c6f6721a39b7
+      width: 5
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-jGQw0nko0J69X8zDJz6TQ
+    type: CHART
+  CHART-Hi4snIvi6aKOEx_EbBNJx:
+    children: []
+    id: CHART-Hi4snIvi6aKOEx_EbBNJx
+    meta:
+      chartId: 30
+      height: 33
+      sliceName: CurrencyDistribution
+      uuid: 9befbe6e-998c-4440-8d72-3056976a0de9
+      width: 2
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-jGQw0nko0J69X8zDJz6TQ
+    type: CHART
+  CHART-IspBieOdytFNgBjjDHsgb:
+    children: []
+    id: CHART-IspBieOdytFNgBjjDHsgb
+    meta:
+      chartId: 1
+      height: 33
+      sliceName: TransactionsByDayOfWeek
+      uuid: 951bb8d4-c878-4221-8660-678da60d83f8
+      width: 5
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-jGQw0nko0J69X8zDJz6TQ
+    type: CHART
+  CHART-N8XrJ7HQX9wRDO6ot6vMo:
+    children: []
+    id: CHART-N8XrJ7HQX9wRDO6ot6vMo
+    meta:
+      chartId: 13
+      height: 29
+      sliceName: Top5TransactionsDay
+      uuid: 32a7cf00-540c-490a-8b02-f210694358a0
+      width: 4
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-WFSmF0CsjBCN5JYJSTn6Z
+    type: CHART
+  CHART-RGAFX-_fPBbsbl6PJYxaD:
+    children: []
+    id: CHART-RGAFX-_fPBbsbl6PJYxaD
+    meta:
+      chartId: 8
+      height: 29
+      sliceName: TotalTransactions30d
+      uuid: 43980638-2c63-4b0f-b576-7137b0f8b6d0
+      width: 2
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-WFSmF0CsjBCN5JYJSTn6Z
+    type: CHART
+  CHART-U067I6J1LwLyNlSzjv_O2:
+    children: []
+    id: CHART-U067I6J1LwLyNlSzjv_O2
+    meta:
+      chartId: 29
+      height: 29
+      sliceName: TotalTransactions
+      uuid: 7bde5a40-c646-485b-8bc7-cf60ef55f2a0
+      width: 2
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-WFSmF0CsjBCN5JYJSTn6Z
+    type: CHART
+  CHART-explore-10-1:
+    children: []
+    id: CHART-explore-10-1
+    meta:
+      chartId: 12
+      height: 27
+      sliceName: TxCompletedToAll
+      uuid: 217437da-9abc-4bb8-93f9-1487add956b7
+      width: 2
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-Zqt5xRORQgH8CLEXJPwOQ
+    type: CHART
+  CHART-explore-11-1:
+    children: []
+    id: CHART-explore-11-1
+    meta:
+      chartId: 33
+      height: 27
+      sliceName: TxCompletedToAll30d
+      uuid: f226d941-13f4-4971-a210-c31d546eb778
+      width: 2
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-Zqt5xRORQgH8CLEXJPwOQ
+    type: CHART
+  CHART-explore-9-1:
+    children: []
+    id: CHART-explore-9-1
+    meta:
+      chartId: 24
+      height: 50
+      sliceName: TransactionStatus
+      uuid: 191ee162-440e-418c-9b20-ce71648c05b1
+      width: 8
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-Zqt5xRORQgH8CLEXJPwOQ
+    type: CHART
+  CHART-paBcYHoIntzaVjn6ZrPKx:
+    children: []
+    id: CHART-paBcYHoIntzaVjn6ZrPKx
+    meta:
+      chartId: 7
+      height: 50
+      sliceName: TransactionsOverTime
+      uuid: 870e188e-4184-4f35-9995-cfcfe8cbe69c
+      width: 12
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-EGME14IKpliVtkg85thOu
+    type: CHART
+  CHART-su2J1DBdgKIi1bzibpOfM:
+    children: []
+    id: CHART-su2J1DBdgKIi1bzibpOfM
+    meta:
+      chartId: 36
+      height: 82
+      sliceName: PreviousDayTransactions
+      uuid: 1f895801-338b-419f-980b-0ecee453e240
+      width: 12
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-rOwCCjGQ4CIx30_62iX8Y
+    - ROW-XkRN-ljfPSzajnicDiDmJ
+    type: CHART
+  CHART-szcCL3AR45D1s4uPIMqX0:
+    children: []
+    id: CHART-szcCL3AR45D1s4uPIMqX0
+    meta:
+      chartId: 22
+      height: 29
+      sliceName: AvgTransactionsPerDay
+      uuid: b27eb203-40d6-42e0-a123-3020e37f8ccb
+      width: 2
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - ROW-WFSmF0CsjBCN5JYJSTn6Z
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children: []
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER-kXA6IZVEEgvXdrmcl3Qdx:
+    children: []
+    id: HEADER-kXA6IZVEEgvXdrmcl3Qdx
+    meta:
+      background: BACKGROUND_TRANSPARENT
+      headerSize: MEDIUM_HEADER
+      text: Summary of Transactions Development over Time
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    type: HEADER
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: Transactions
+    type: HEADER
+  ROOT_ID:
+    children:
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    id: ROOT_ID
+    type: ROOT
+  ROW-EGME14IKpliVtkg85thOu:
+    children:
+    - CHART-paBcYHoIntzaVjn6ZrPKx
+    id: ROW-EGME14IKpliVtkg85thOu
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    type: ROW
+  ROW-WFSmF0CsjBCN5JYJSTn6Z:
+    children:
+    - CHART-U067I6J1LwLyNlSzjv_O2
+    - CHART-RGAFX-_fPBbsbl6PJYxaD
+    - CHART-szcCL3AR45D1s4uPIMqX0
+    - CHART-6J0fIGwT6gUV_qASZx2Tc
+    - CHART-N8XrJ7HQX9wRDO6ot6vMo
+    id: ROW-WFSmF0CsjBCN5JYJSTn6Z
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    type: ROW
+  ROW-XkRN-ljfPSzajnicDiDmJ:
+    children:
+    - CHART-su2J1DBdgKIi1bzibpOfM
+    id: ROW-XkRN-ljfPSzajnicDiDmJ
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-rOwCCjGQ4CIx30_62iX8Y
+    type: ROW
+  ROW-Zqt5xRORQgH8CLEXJPwOQ:
+    children:
+    - CHART-explore-9-1
+    - CHART-explore-10-1
+    - CHART-explore-11-1
+    id: ROW-Zqt5xRORQgH8CLEXJPwOQ
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    type: ROW
+  ROW-aIBgs-dv3ewoXvocboluP:
+    children:
+    - CHART-3VLlECFls6nT1P1--nRdN
+    id: ROW-aIBgs-dv3ewoXvocboluP
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-UaWHRwnG9DMDJWGMEpIq3
+    type: ROW
+  ROW-jGQw0nko0J69X8zDJz6TQ:
+    children:
+    - CHART-IspBieOdytFNgBjjDHsgb
+    - CHART-B-TaZraVtEOTl-wJDzjZh
+    - CHART-Hi4snIvi6aKOEx_EbBNJx
+    id: ROW-jGQw0nko0J69X8zDJz6TQ
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    type: ROW
+  TAB-B-ge-ukSg8vONqzSwfnf2:
+    children:
+    - HEADER-kXA6IZVEEgvXdrmcl3Qdx
+    - ROW-WFSmF0CsjBCN5JYJSTn6Z
+    - ROW-EGME14IKpliVtkg85thOu
+    - ROW-jGQw0nko0J69X8zDJz6TQ
+    - ROW-Zqt5xRORQgH8CLEXJPwOQ
+    id: TAB-B-ge-ukSg8vONqzSwfnf2
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: Overview
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    type: TAB
+  TAB-UaWHRwnG9DMDJWGMEpIq3:
+    children:
+    - ROW-aIBgs-dv3ewoXvocboluP
+    id: TAB-UaWHRwnG9DMDJWGMEpIq3
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: Transaction Raw Details
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    type: TAB
+  TAB-rOwCCjGQ4CIx30_62iX8Y:
+    children:
+    - ROW-XkRN-ljfPSzajnicDiDmJ
+    id: TAB-rOwCCjGQ4CIx30_62iX8Y
+    meta:
+      defaultText: Tab title
+      placeholder: Tab title
+      text: Previous Day Transactions
+    parents:
+    - ROOT_ID
+    - TABS-caHHQzt7OT-CGG8KBHMlc
+    type: TAB
+  TABS-caHHQzt7OT-CGG8KBHMlc:
+    children:
+    - TAB-B-ge-ukSg8vONqzSwfnf2
+    - TAB-UaWHRwnG9DMDJWGMEpIq3
+    - TAB-rOwCCjGQ4CIx30_62iX8Y
+    id: TABS-caHHQzt7OT-CGG8KBHMlc
+    meta: {}
+    parents:
+    - ROOT_ID
+    type: TABS
+metadata:
+  chart_configuration:
+    '1':
+      id: 1
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 6
+        - 7
+        - 8
+        - 12
+        - 13
+        - 14
+        - 22
+        - 24
+        - 29
+        - 30
+        - 33
+        - 35
+        - 36
+    '6':
+      id: 6
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 7
+        - 8
+        - 12
+        - 13
+        - 14
+        - 22
+        - 24
+        - 29
+        - 30
+        - 33
+        - 35
+        - 36
+    '7':
+      id: 7
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 6
+        - 8
+        - 12
+        - 13
+        - 14
+        - 22
+        - 24
+        - 29
+        - 30
+        - 33
+        - 35
+        - 36
+    '13':
+      id: 13
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 6
+        - 7
+        - 8
+        - 12
+        - 14
+        - 22
+        - 24
+        - 29
+        - 30
+        - 33
+        - 35
+        - 36
+    '24':
+      id: 24
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 6
+        - 7
+        - 8
+        - 12
+        - 13
+        - 14
+        - 22
+        - 29
+        - 30
+        - 33
+        - 35
+        - 36
+    '35':
+      id: 35
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 6
+        - 7
+        - 8
+        - 12
+        - 13
+        - 14
+        - 22
+        - 24
+        - 29
+        - 30
+        - 33
+        - 36
+    '36':
+      id: 36
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 1
+        - 6
+        - 7
+        - 8
+        - 12
+        - 13
+        - 14
+        - 22
+        - 24
+        - 29
+        - 30
+        - 33
+        - 35
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 1
+    - 6
+    - 7
+    - 8
+    - 12
+    - 13
+    - 14
+    - 22
+    - 24
+    - 29
+    - 30
+    - 33
+    - 35
+    - 36
+  map_label_colors:
+    COUNT(amount): '#6BD3B3'
+    PHP: '#1FA8C9'
+    HKD: '#454E7C'
+    USD: '#666666'
+    EUR: '#5AC189'
+    GBP: '#FF7F44'
+    completed: '#1FA8C9'
+    pending: '#454E7C'
+    failed: '#5AC189'
+  color_scheme: ''
+  refresh_frequency: 0
+  color_scheme_domain: []
+  expanded_slices: {}
+  label_colors: {}
+  shared_label_colors:
+  - COUNT(amount)
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  native_filter_configuration:
+  - id: NATIVE_FILTER-d-3v_tehcI-udaQ8v9r5v
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Date
+    filterType: filter_select
+    targets:
+    - column:
+        name: transaction_date
+      datasetUuid: de980972-83e3-4a38-9ad2-e634127e0bf3
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - TAB-UaWHRwnG9DMDJWGMEpIq3
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 35
+    tabsInScope:
+    - TAB-UaWHRwnG9DMDJWGMEpIq3
+  - id: NATIVE_FILTER-pbdsiBOgCA85eIUYJr8zm
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Sender
+    filterType: filter_select
+    targets:
+    - column:
+        name: sender
+      datasetUuid: de980972-83e3-4a38-9ad2-e634127e0bf3
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - TAB-UaWHRwnG9DMDJWGMEpIq3
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 35
+    tabsInScope:
+    - TAB-UaWHRwnG9DMDJWGMEpIq3
+  - id: NATIVE_FILTER-RnyKLDMYRomaxGnogSYZy
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Receiver
+    filterType: filter_select
+    targets:
+    - column:
+        name: receiver
+      datasetUuid: de980972-83e3-4a38-9ad2-e634127e0bf3
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - TAB-UaWHRwnG9DMDJWGMEpIq3
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 35
+    tabsInScope:
+    - TAB-UaWHRwnG9DMDJWGMEpIq3
+  - id: NATIVE_FILTER-9FnFFrvCAcpVpyin0pnL7
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Status
+    filterType: filter_select
+    targets:
+    - column:
+        name: status
+      datasetUuid: de980972-83e3-4a38-9ad2-e634127e0bf3
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - TAB-UaWHRwnG9DMDJWGMEpIq3
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 35
+    tabsInScope:
+    - TAB-UaWHRwnG9DMDJWGMEpIq3
+  - id: NATIVE_FILTER-nNLKxavf-NCTk2jlRH2kA
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Currency
+    filterType: filter_select
+    targets:
+    - column:
+        name: currency
+      datasetUuid: de980972-83e3-4a38-9ad2-e634127e0bf3
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - TAB-UaWHRwnG9DMDJWGMEpIq3
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 35
+    tabsInScope:
+    - TAB-UaWHRwnG9DMDJWGMEpIq3
+  - id: NATIVE_FILTER-y4W5PX-BGFzW68xLn983s
+    controlValues:
+      enableEmptyFilter: false
+    name: Amount
+    filterType: filter_range
+    targets:
+    - column:
+        name: amount
+      datasetUuid: de980972-83e3-4a38-9ad2-e634127e0bf3
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - TAB-UaWHRwnG9DMDJWGMEpIq3
+      excluded: []
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 35
+    tabsInScope:
+    - TAB-UaWHRwnG9DMDJWGMEpIq3
+  default_filters: '{}'
+version: 1.0.0

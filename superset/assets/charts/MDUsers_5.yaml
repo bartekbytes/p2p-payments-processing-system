@@ -1,0 +1,48 @@
+slice_name: MDUsers
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 9__table
+  viz_type: table
+  query_mode: raw
+  groupby: []
+  time_grain_sqla: P1D
+  temporal_columns_lookup:
+    date_of_birth: true
+  all_columns:
+  - label: user_id
+    sqlExpression: user_id::VARCHAR(50)
+    expressionType: SQL
+  - first_name
+  - last_name
+  - date_of_birth
+  - sex
+  percent_metrics: []
+  adhoc_filters:
+  - clause: WHERE
+    subject: date_of_birth
+    operator: TEMPORAL_RANGE
+    comparator: No filter
+    expressionType: SIMPLE
+  order_by_cols: []
+  row_limit: 1000
+  server_page_length: 10
+  order_desc: true
+  table_timestamp_format: smart_date
+  allow_render_html: true
+  show_cell_bars: true
+  color_pn: true
+  comparison_color_scheme: Green
+  comparison_type: values
+  extra_form_data: {}
+  dashboards: []
+  annotation_layers: []
+query_context: '{"datasource":{"id":9,"type":"table"},"force":false,"queries":[{"filters":[{"col":"date_of_birth","op":"TEMPORAL_RANGE","val":"No
+  filter"}],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":[{"label":"user_id","sqlExpression":"user_id::VARCHAR(50)","expressionType":"SQL"},"first_name","last_name","date_of_birth","sex"],"orderby":[],"annotation_layers":[],"row_limit":1000,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[],"time_offsets":[]}],"form_data":{"datasource":"9__table","viz_type":"table","query_mode":"raw","groupby":[],"time_grain_sqla":"P1D","temporal_columns_lookup":{"date_of_birth":true},"all_columns":[{"label":"user_id","sqlExpression":"user_id::VARCHAR(50)","expressionType":"SQL"},"first_name","last_name","date_of_birth","sex"],"percent_metrics":[],"adhoc_filters":[{"clause":"WHERE","subject":"date_of_birth","operator":"TEMPORAL_RANGE","comparator":"No
+  filter","expressionType":"SIMPLE"}],"order_by_cols":[],"row_limit":1000,"server_page_length":10,"order_desc":true,"table_timestamp_format":"smart_date","allow_render_html":true,"show_cell_bars":true,"color_pn":true,"comparison_color_scheme":"Green","comparison_type":"values","extra_form_data":{},"dashboards":[],"force":false,"result_format":"json","result_type":"full","include_time":false},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 1d4d4824-f7ca-4f17-b932-ed4b9162f59a
+version: 1.0.0
+dataset_uuid: f82fa0c7-5cd9-448b-a9b5-6a1eebcbf29a

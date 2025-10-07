@@ -82,6 +82,18 @@ services:
       - "8080:8080"
     command: standalone
 
+  # Airflow 3
+  #  pps_airflow:
+  #    image: apache/airflow:3.0.0
+  #    container_name: pps_airflow
+  #    ports:
+  #      - "8080:8080"
+  #    volumes:
+  #      - ./orchestration/airflow/dags:/opt/airflow/dags
+  #      - /var/run/docker.sock:/var/run/docker.sock # Allow DockerOperator to run containers
+  #    command: >
+  #      bash -c "airflow db migrate && airflow standalone"
+
   pps_superset:
     build:
       context: ./superset/
@@ -156,7 +168,7 @@ services:
 
   pps_dbt:
     build:
-      context: ./data_processing/firstcircle
+      context: ./data_processing/pps
     container_name: pps_dbt
     tty: true
     depends_on:
