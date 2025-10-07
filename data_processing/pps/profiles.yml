@@ -1,0 +1,21 @@
+firstcircle:
+  target: dev
+  outputs:
+    dev:
+      dbname: pps
+      host: localhost
+      pass: postgresql
+      port: 5432
+      schema: pps
+      threads: 1
+      type: postgres
+      user: postgres
+    prod:
+      dbname: pps
+      host: pps_postgresql
+      pass: postgresql
+      port: 5432
+      schema: pps
+      threads: 1
+      type: postgres
+      user: postgres

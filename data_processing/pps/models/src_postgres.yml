@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: pps
+    schema: pps
+    tables:
+      - name: currencies
+      - name: transactions
+      - name: users
+      - name: transaction_statuses

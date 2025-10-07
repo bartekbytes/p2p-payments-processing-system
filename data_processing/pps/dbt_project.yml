@@ -1,0 +1,42 @@
+# Name your project! Project names should contain only lowercase characters
+# and underscores. A good package name should reflect your organization's
+# name or the intended use of these models
+name: "pps"
+version: "1.0.0"
+
+# This setting configures which "profile" dbt uses for this project.
+profile: "pps"
+
+# These configurations specify where dbt should look for different types of files.
+# The `model-paths` config, for example, states that models in this project can be
+# found in the "models/" directory. You probably won't need to change these!
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets: # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+vars:
+  # handling -infinity, +infinity date values
+  infinity_minus: "CAST('1900-01-01' AS DATE)"
+  infinity_plus: "CAST('9999-12-31' AS DATE)"
+
+  # section for handling "Unknown Member" default values
+  unknown_member_id: -1
+  unknown_member_string: "'N/A'"
+  unknown_member_date: "CAST('1900-01-01' AS DATE)"
+  unknown_member_number: -1
+
+models:
+  firstcircle:
+    dm:
+      +schema: dm
+      +materialized: table
+    dwh:
+      +schema: dwh
+      +materialized: table

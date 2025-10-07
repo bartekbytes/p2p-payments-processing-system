@@ -1,0 +1,11 @@
+selectors:
+  - name: dwh
+    description: "Selector to run all DWH-related models."
+    definition:
+      method: path
+      value: models/dwh
+  - name: dm
+    description: "Selector to run all DM-related models."
+    definition:
+      method: path
+      value: models/dm

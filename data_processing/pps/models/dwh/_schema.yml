@@ -1,0 +1,311 @@
+#version: 2
+
+models:
+  - name: transactions
+    description: >
+      Represents a Transaction that occured in a given point of time, between Users (Sender and Receives),
+      for a given Amount and Currency. Status of the Transacion is provided.
+    columns:
+      - name: transaction_date
+        description: >
+          "The Date (year, month, day, YYYY-MM-DD format) when a Transaction ocurred"
+        data_tests:
+          - not_null
+      - name: sender_id
+        description: >
+          "User who initiated the given Transaction and sent money"
+        data_tests:
+          - not_null
+      - name: receiver_id
+        description: >
+          "User who received money from the given Transaction"
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "<> sender_id"
+      - name: currency
+        description: >
+          "Curency on which the given Transaction was done"
+        data_tests:
+          - not_null
+      - name: status
+        description: >
+          "Status of a given Transaction"
+        data_tests:
+          - not_null
+      - name: amount
+        description: >
+          "Amount of money recorded on the given Transaction.
+          18-digit number, with 16 digits before comma and 2 digits after comma.
+          Always greater than 0.""
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: transaction_datetime
+        description: >
+          "Exact date and time (YYYY-MM-DD HH:mm:SS format) when a Transaction ocurred.
+          It's an extension to date_key field that includes also a time.
+          Value in UTC timezone"
+        data_tests:
+          - not_null
+
+  - name: currencies
+    description: >
+      "Currencies representation of an ISO 4217 standard Currency naming convention 
+      (https://www.iso.org/iso-4217-currency-codes.html)"
+    columns:
+      - name: currency_id
+        description: "Surrogate Currency Key"
+        data_tests:
+          - unique
+          - not_null
+      - name: currency_code
+        description: "3-letter abbreviation of a given Currenct according to ISO 4217 standard."
+        data_tests:
+          - unique
+          - not_null
+      - name: currency_name
+        description: "Official Currency name according to ISO 4217 standard."
+        data_tests:
+          - unique
+          - not_null
+
+  - name: users
+    description: >
+      "Representing a Person/Organization Entity that is a part of Transaction."
+    columns:
+      - name: user_id
+        description: "Surrogate User Key"
+        data_tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: "First Name of the User"
+        data_tests:
+          - not_null
+      - name: last_name
+        description: "Last Name of the User"
+        data_tests:
+          - not_null
+      - name: date_of_birth
+        description: "Date of Birth of the user in YYYY-MM-DD format"
+        data_tests:
+          - not_null
+      - name: sex
+        description: "Gender of the User"
+        data_tests:
+          - not_null
+
+  - name: transaction_statuses
+    description: >
+      "All possible statuses that the given Transaction can have during it's lifecycle"
+    columns:
+      - name: transaction_status_id
+        description: "Surrogate Transaction Status Key"
+        data_tests:
+          - unique
+          - not_null
+      - name: transaction_status
+        description: "Status of the given Transaction"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: calendar
+    description: >
+      "Calendar representing basic information about days, months, quarters, weekends on a day granularity"
+    columns:
+      - name: date_id
+        description: "Unique identifier, representing as date data type in YYYY-MM-DD format"
+        data_tests:
+          - unique
+          - not_null
+      - name: date_number
+        description: "date_id field from the table represented as integer (numeric) data type in YYYYMMDD format (as number)"
+        data_tests:
+          - unique
+          - not_null
+
+      - name: day_name
+        description: "English name of the Day of the Week (Monday, Tuesday, ..., Sunday)"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values:
+                [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday",
+                ]
+              config:
+                where: "day_name != 'N/A'"
+
+      - name: day_name_abbr
+        description: "English three-letter abbreviated name of the Day of the Week (Mon, Tue, ..., Sun)."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+              config:
+                where: "day_name_abbr != 'N/A'"
+
+      - name: month_number
+        description: "Month number as integer value (1..12)"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+              config:
+                where: "month_number != -1"
+
+      - name: month_name
+        description: "English name of the Month (January, February, ..., December)"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values:
+                [
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "July",
+                  "August",
+                  "September",
+                  "October",
+                  "November",
+                  "December",
+                ]
+              config:
+                where: "month_name != 'N/A'"
+
+      - name: month_name_abbr
+        description: "English three-letter abbreviated name of the Month (Jan, Feb, .. Dec)."
+        data_tests:
+          - not_null
+          - accepted_values:
+              values:
+                [
+                  "Jan",
+                  "Feb",
+                  "Mar",
+                  "Apr",
+                  "May",
+                  "Jun",
+                  "Jul",
+                  "Aug",
+                  "Sep",
+                  "Oct",
+                  "Nov",
+                  "Dec",
+                ]
+              config:
+                where: "month_name_abbr != 'N/A'"
+
+      - name: quarter_number
+        description: "Calendar Quarter number within a year, as integer value (1,2,3,4)"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4]
+              config:
+                where: "quarter_number != -1"
+
+      - name: quarter_name
+        description: "Calendar Quarter name in pattern Q<quarter_number> (Q1, Q2, Q3, Q4)"
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ["Q1", "Q2", "Q3", "Q4"]
+              config:
+                where: "quarter_name != 'N/A'"
+
+      - name: start_of_month
+        description: "First day of the given Month for the Date."
+        data_tests:
+          - not_null
+
+      - name: end_of_month
+        description: "Last day of the given Month for the Date."
+        data_tests:
+          - not_null
+
+      - name: start_of_quarter
+        description: "First day of the given Quarter for the Date."
+        data_tests:
+          - not_null
+
+      - name: end_of_quarter
+        description: "Last day of the given Quarter for the Date."
+        data_tests:
+          - not_null
+
+      - name: start_of_year
+        description: "First day of the given Year for the Date."
+        data_tests:
+          - not_null
+
+      - name: end_of_year
+        description: "Last day of the given Year for the Date."
+        data_tests:
+          - not_null
+
+      - name: yyyymm
+        description: "Year-Month date as string in YYYYMM format."
+        data_tests:
+          - not_null
+
+      - name: yyyymmdd
+        description: "Year-Month-Day date as string in YYYYMMDD format."
+        data_tests:
+          - not_null
+
+      - name: year_number
+        description: "Year of the given Date as number (not string) in YYYY format."
+        data_tests:
+          - not_null
+
+      - name: year_only
+        description: "Year of the given Date as string in YYYY format."
+        data_tests:
+          - not_null
+
+      - name: year_quarter
+        description: >
+          "Year-Quarter of the given Date as string with a pattern YYYY-QQ,
+          where:
+            - QQ has one of values: Q1, Q2, Q3, Q4."
+        data_tests:
+          - not_null
+
+      - name: year_quarter_month
+        description: >
+          "Year-Quarter-Month of the given Date as string with a pattern YYYY-QQ-MTH,
+          where:
+            - QQ has one of values: Q1, Q2, Q3, Q4
+            - MTH is a 3-letter english abbravioation of the name of the month (Jan, Feb, ..., Dec)."
+        data_tests:
+          - not_null
+
+      - name: year_month
+        description: >
+          "Year-Month of the given Date as string with a pattern YYYY-MTH,
+          where:
+            - MTH is a 3-letter english abbravioation of the name of the month (Jan, Feb, ..., Dec)."
+        data_tests:
+          - not_null
+
+      - name: is_weekend
+        description: >
+          "Indication if the given Date is a Weekend or not.
+          1 - the given day is a Weekend
+          0 - the given day is not a Weekend"
+        data_tests:
+          - not_null
