@@ -1,0 +1,10 @@
+requests
+pydantic
+tqdm
+python-json-logger
+python-dotenv
+
+# local packages
+common_config-1.0.0-py3-none-any.whl
+common_logger-1.0.0-py3-none-any.whl
+common_models-1.0.0-py3-none-any.whl
